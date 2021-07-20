@@ -29,7 +29,7 @@
             <el-menu-item index="/BasicData" route="/BasicData"
               >入学基础数据</el-menu-item
             >
-            <el-menu-item index="/SignIn" @click="goto('/SignIn')"
+            <el-menu-item index="/SignIn" route="/SignIn"
               >上课签到统计</el-menu-item
             >
             <el-menu-item index="/GradeData" @click="goto('/GradeData')"
@@ -116,6 +116,8 @@
 
 <script>
 export default {
+  // name: 'App',
+  // components: {NavMenu},
   data() {
     return {};
   },
