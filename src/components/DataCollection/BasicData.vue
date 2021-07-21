@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="text-align: right">
+    <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -15,57 +15,60 @@
       </el-dropdown>
     </div>
 
-    <div style="display: flex">
+    <div class="headerText">
       <span style="font-weight: bold; color: #777777">入学基础数据</span>
     </div>
 
-    <div style="margin-top: 2%; display: flex; justify-content: space-between">
-      <el-button type="primary">导入</el-button>
-      <el-button type="primary">新增</el-button>
-      <el-button type="primary">删除</el-button>
-      <el-button type="danger" style="margin-right: 10%">导出</el-button>
-
-      <el-select v-model="valueOfYear" placeholder="入学年份" style="width: 10%">
-        <el-option
-          v-for="item in optionsOfYear"
-          :key="item.valueOfYear"
-          :label="item.label"
-          :value="item.valueOfYear"
+    <div class="functionBar">
+      <div class="buttonCotainer">
+        <el-button type="primary">导入</el-button>
+        <el-button type="primary">新增</el-button>
+        <el-button type="primary">删除</el-button>
+        <el-button type="danger">导出</el-button>
+      </div>
+      <div class="selectCotainer">
+        <el-select
+          v-model="valueOfYear"
+          placeholder="入学年份"
+          style="width: 10%"
         >
-        </el-option>
-      </el-select>
-      <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
-        <el-option
-          v-for="item in optionsOfClass"
-          :key="item.valueOfClass"
-          :label="item.label"
-          :value="item.valueOfClass"
-        >
-        </el-option>
-      </el-select>
-      <el-input
-        v-model="inputID"
-        placeholder="学号"
-        style="width: 10%"
-      ></el-input>
-      <el-input
-        v-model="inputName"
-        placeholder="姓名"
-        style="width: 10%"
-      ></el-input>
-      <el-button type="primary">搜索</el-button>
+          <el-option
+            v-for="item in optionsOfYear"
+            :key="item.valueOfYear"
+            :label="item.label"
+            :value="item.valueOfYear"
+          >
+          </el-option>
+        </el-select>
+        <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
+          <el-option
+            v-for="item in optionsOfClass"
+            :key="item.valueOfClass"
+            :label="item.label"
+            :value="item.valueOfClass"
+          >
+          </el-option>
+        </el-select>
+        <el-input
+          v-model="inputID"
+          placeholder="学号"
+          style="width: 10%"
+        ></el-input>
+        <el-input
+          v-model="inputName"
+          placeholder="姓名"
+          style="width: 10%"
+        ></el-input>
+        <el-button type="primary">搜索</el-button>
+      </div>
     </div>
-
-    <div style="flex-direction: column"></div>
-
-    <div style="margin-top: 2%; display: flex">
-      <el-table
-        :data="
-          tableData.slice((currentPage - 1) * pagesize, currentPage * pagesize)
-        "
-        border
-        style="width: 100%"
-      >
+    
+    <!-- todo:checkBox在label里 -->
+    <div class="dataTable">
+      <el-table :data="calTableData" border style="width: 100%">
+        <el-table-column prop="checkBox" label="checkBox?" align="center"
+          ><el-checkbox v-model="checked"></el-checkbox>
+        </el-table-column>
         <el-table-column prop="stdSchoolID" label="学号" align="center">
         </el-table-column>
         <el-table-column prop="stdName" label="姓名" align="center">
@@ -86,7 +89,7 @@
       </el-table>
     </div>
 
-    <div style="margin-top: 2%; display: flex">
+    <div class="tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -139,8 +142,10 @@ export default {
         },
       ],
       valueOfClass: "",
+      
       inputID: "",
       inputName: "",
+      
       currentPage: 1,
       pagesize: 20,
       tableData: [
@@ -165,8 +170,42 @@ export default {
       ],
     };
   },
+  computed: {
+    calTableData: function () {
+      return this.tableData.slice(
+        (this.currentPage - 1) * this.pagesize,
+        this.currentPage * this.pagesize
+      );
+    },
+  },
 };
 </script>
 
 <style>
+.headerName {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.functionBar {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+  display: flex;
+}
+.buttonCotainer {
+  flex: 3;
+}
+.selectCotainer {
+  flex: 7;
+  display: flex;
+  justify-content: flex-end;
+}
+.dataTable {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+}
+.tableTag {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+}
 </style>

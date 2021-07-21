@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="text-align: right">
+    <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -15,7 +15,7 @@
       </el-dropdown>
     </div>
 
-    <div style="display: flex">
+    <div class="headerText">
       <span style="font-weight: bold; color: #777777">学生近况与关怀</span>
     </div>
   </div>
@@ -26,4 +26,8 @@ export default {};
 </script>
 
 <style>
+.headerName {
+  display: flex;
+  justify-content: flex-end;
+}
 </style>

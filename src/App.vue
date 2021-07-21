@@ -5,13 +5,12 @@
 
   <!-- 导航栏，用单独的一个div包裹，后续可优化//已经改完 -->
   <!-- 拆分出组件来 -->
-  <div style="display: flex;  width: 100%; height: 100%">
-    <div></div>
+  <div id="app">
       <NavMenu />
     
     <!-- 右侧内容区域 -->
 
-    <div style="margin-left: 2%; margin-right: 2%">
+    <div class="right-container">
       <router-view></router-view>
     </div>
   </div>
@@ -28,4 +27,16 @@ export default {
 </script>
 
 <style scoped>
+#app {
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+}
+
+.right-container {
+  padding: 15px;
+  /* background: blue; */
+  flex-grow: 1;
+  box-sizing: border-box;
+}
 </style>

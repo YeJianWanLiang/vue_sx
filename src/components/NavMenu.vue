@@ -1,8 +1,8 @@
 <template>
-  <div style="width: 15%">
+  <div class="nav-menu-wrapper">
       <el-menu
         default-active="1"
-        class="el-menu-vertical-demo"
+        class="nav-menu"
         @open="handleOpen"
         @close="handleClose"
         background-color="#515A6E"
@@ -10,7 +10,6 @@
         active-text-color="#4A7EE4"
         unique-opened="true"
         router="true"
-        style=""
       >
         <!-- 数据采集 -->
         <el-submenu index="1">
@@ -117,5 +116,12 @@ methods: {
 </script>
 
 <style>
-
+.nav-menu-wrapper {
+  width: 15%;
+  height: 100%;
+  min-width: 215px;
+}
+.nav-menu {
+  height: 100%;
+}
 </style>

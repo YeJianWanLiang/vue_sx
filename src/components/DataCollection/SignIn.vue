@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="text-align: right">
+    <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -15,47 +15,44 @@
       </el-dropdown>
     </div>
 
-    <div style="display: flex">
+    <div class="headerText">
       <span style="font-weight: bold; color: #777777">上课签到统计</span>
     </div>
 
-    <div style="margin-top: 2%; display: flex">
-      <div style="display: flex">
+    <div class="functionBar">
+      <div class="buttonCotainer">
         <el-button type="primary">新增</el-button>
-        <el-button>推送设置</el-button>
+        <el-button plain>推送设置</el-button>
       </div>
 
-      <!-- todo:没有在行尾 -->
-      <div style="display: flex; justify-content: flex-end">
-        <el-select v-model= "valueOfYear" placeholder="入学年份" style="width: 30%">
+      <div class="selectCotainer">
+        <el-select
+          v-model="valueOfYear"
+          placeholder="入学年份"
+          style="width: 10%"
+        >
           <el-option
-            v-for= "item in optionsOfYear"
-            :key= "item.valueOfYear"
-            :label= "item.label"
-            :value= "item.valueOfYear"
+            v-for="item in optionsOfYear"
+            :key="item.valueOfYear"
+            :label="item.label"
+            :value="item.valueOfYear"
           >
           </el-option>
         </el-select>
-        <el-select v-model= "valueOfClass" placeholder="班级" style="width: 30%">
+        <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
           <el-option
-            v-for= "item in optionsOfClass"
-            :key= "item.valueOfClass"
-            :label= "item.label"
-            :value= "item.valueOfClass"
+            v-for="item in optionsOfClass"
+            :key="item.valueOfClass"
+            :label="item.label"
+            :value="item.valueOfClass"
           >
           </el-option>
         </el-select>
       </div>
     </div>
 
-    <div style="margin-top: 2%; display: flex">
-      <el-table
-        :data= "
-          tableData.slice((currentPage - 1) * pagesize, currentPage * pagesize)
-        "
-        border
-        style="width: 100%"
-      >
+    <div class="dataTable">
+      <el-table :data="calTableData" border>
         <el-table-column prop="class" label="班级" align="center">
         </el-table-column>
         <el-table-column prop="year" label="入学年份" align="center">
@@ -88,15 +85,15 @@
       </el-table>
     </div>
 
-    <div style="margin-top: 2%; display: flex">
+    <div class="tableTag">
       <el-pagination
-        @size-change= "handleSizeChange"
-        @current-change= "handleCurrentChange"
-        :current-page= "currentPage"
-        :page-sizes= "[10, 20, 30, 50]"
-        :page-size= "pagesize"
-        layout= "total, sizes, prev, pager, next, jumper"
-        :total= "tableData.length"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 30, 50]"
+        :page-size="pagesize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="tableData.length"
       >
       </el-pagination>
     </div>
@@ -124,7 +121,6 @@ export default {
           valueOfYear: "选项4",
           label: "2018",
         },
-        
       ],
       valueOfYear: "",
       optionsOfClass: [
@@ -178,8 +174,40 @@ export default {
       ],
     };
   },
+  computed: {
+    calTableData: function () {
+      return this.tableData.slice(
+        (this.currentPage - 1) * this.pagesize,
+        this.currentPage * this.pagesize
+      );
+    },
+  },
 };
 </script>
 
 <style>
+.headerName {
+  display: flex;
+  justify-content: flex-end;
+}
+.functionBar {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+  display: flex;
+}
+.buttonCotainer {
+  flex: 3;
+}
+.selectCotainer {
+  flex: 7;
+  justify-content: flex-end;
+}
+.dataTable {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+}
+.tableTag {
+  box-sizing: border-box;
+  padding: 15px 0 0 0;
+}
 </style>
