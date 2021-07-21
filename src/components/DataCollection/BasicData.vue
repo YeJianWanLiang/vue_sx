@@ -25,21 +25,21 @@
       <el-button type="primary">删除</el-button>
       <el-button type="danger" style="margin-right: 10%">导出</el-button>
 
-      <el-select v-model="value" placeholder="入学年份" style="width: 10%">
+      <el-select v-model="valueOfYear" placeholder="入学年份" style="width: 10%">
         <el-option
           v-for="item in optionsOfYear"
-          :key="item.value"
+          :key="item.valueOfYear"
           :label="item.label"
-          :value="item.value"
+          :value="item.valueOfYear"
         >
         </el-option>
       </el-select>
-      <el-select v-model="value" placeholder="班级" style="width: 10%">
+      <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
         <el-option
           v-for="item in optionsOfClass"
-          :key="item.value"
+          :key="item.valueOfClass"
           :label="item.label"
-          :value="item.value"
+          :value="item.valueOfClass"
         >
         </el-option>
       </el-select>
@@ -107,36 +107,38 @@ export default {
     return {
       optionsOfYear: [
         {
-          value: "选项1",
+          valueOfYear: "选项1",
           label: "2021",
         },
         {
-          value: "选项2",
+          valueOfYear: "选项2",
           label: "2020",
         },
         {
-          value: "选项3",
+          valueOfYear: "选项3",
           label: "2019",
         },
         {
-          value: "选项4",
+          valueOfYear: "选项4",
           label: "2018",
         },
       ],
+      valueOfYear: "",
       optionsOfClass: [
         {
-          value: "选项1",
+          valueOfClass: "选项1",
           label: "班级1",
         },
         {
-          value: "选项2",
+          valueOfClass: "选项2",
           label: "班级2",
         },
         {
-          value: "选项3",
+          valueOfClass: "选项3",
           label: "班级3",
         },
       ],
+      valueOfClass: "",
       inputID: "",
       inputName: "",
       currentPage: 1,

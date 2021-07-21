@@ -27,21 +27,21 @@
 
       <!-- todo:没有在行尾 -->
       <div style="display: flex; justify-content: flex-end">
-        <el-select v-model="value" placeholder="入学年份" style="width: 30%">
+        <el-select v-model= "valueOfYear" placeholder="入学年份" style="width: 30%">
           <el-option
-            v-for="item in optionsOfYear"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-for= "item in optionsOfYear"
+            :key= "item.valueOfYear"
+            :label= "item.label"
+            :value= "item.valueOfYear"
           >
           </el-option>
         </el-select>
-        <el-select v-model="value" placeholder="班级" style="width: 30%">
+        <el-select v-model= "valueOfClass" placeholder="班级" style="width: 30%">
           <el-option
-            v-for="item in optionsOfClass"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-for= "item in optionsOfClass"
+            :key= "item.valueOfClass"
+            :label= "item.label"
+            :value= "item.valueOfClass"
           >
           </el-option>
         </el-select>
@@ -50,7 +50,7 @@
 
     <div style="margin-top: 2%; display: flex">
       <el-table
-        :data="
+        :data= "
           tableData.slice((currentPage - 1) * pagesize, currentPage * pagesize)
         "
         border
@@ -90,13 +90,13 @@
 
     <div style="margin-top: 2%; display: flex">
       <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-sizes="[10, 20, 30, 50]"
-        :page-size="pagesize"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="tableData.length"
+        @size-change= "handleSizeChange"
+        @current-change= "handleCurrentChange"
+        :current-page= "currentPage"
+        :page-sizes= "[10, 20, 30, 50]"
+        :page-size= "pagesize"
+        layout= "total, sizes, prev, pager, next, jumper"
+        :total= "tableData.length"
       >
       </el-pagination>
     </div>
@@ -109,36 +109,39 @@ export default {
     return {
       optionsOfYear: [
         {
-          value: "选项1",
+          valueOfYear: "选项1",
           label: "2021",
         },
         {
-          value: "选项2",
+          valueOfYear: "选项2",
           label: "2020",
         },
         {
-          value: "选项3",
+          valueOfYear: "选项3",
           label: "2019",
         },
         {
-          value: "选项4",
+          valueOfYear: "选项4",
           label: "2018",
         },
+        
       ],
+      valueOfYear: "",
       optionsOfClass: [
         {
-          value: "选项1",
+          valueOfClass: "选项1",
           label: "班级1",
         },
         {
-          value: "选项2",
+          valueOfClass: "选项2",
           label: "班级2",
         },
         {
-          value: "选项3",
+          valueOfClass: "选项3",
           label: "班级3",
         },
       ],
+      valueOfClass: "",
       currentPage: 1,
       pagesize: 20,
       tableData: [
