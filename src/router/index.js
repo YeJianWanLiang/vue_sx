@@ -21,74 +21,74 @@ import BasicInformation from '../components/BasicInformation/BasicInformation.vu
 
 export default new VueRouter({
     routes: [{
-            path: '/BasicData',
-            name: 'BasicData',
-            component: BasicData,
-        },
-        {
-            path: '/DailyActivity',
-            name: 'DailyActivity',
-            component: DailyActivity,
-        },
-        {
-            path: '/GradeData',
-            name: 'GradeData',
-            component: GradeData,
-        },
-        {
-            path: '/QuestionSurvey',
-            name: 'QuestionSurvey',
-            component: QuestionSurvey,
-        },
-        {
-            path: '/SignIn',
-            name: 'SignIn',
-            component: SignIn,
-        },
-        {
-            path: '/Evaluation',
-            name: 'Evaluation',
-            component: Evaluation,
-        },
-        {
-            path: '/Growth',
-            name: 'Growth',
-            component: Growth,
-        },
-        {
-            path: '/ImageAnalysis',
-            name: 'ImageAnalysis',
-            component: ImageAnalysis,
-        },
-        {
-            path: '/MentalWarning',
-            name: 'MentalWarning',
-            component: MentalWarning,
-        },
-        {
-            path: '/RecentCare',
-            name: 'RecentCare',
-            component: RecentCare
-        },
-        {
-            path: '/CharacterManage',
-            name: 'CharacterManage',
-            component: CharacterManage,
-        },
-        {
-            path: '/StudentAndParent',
-            name: 'StudentAndParent',
-            component: StudentAndParent,
-        },
-        {
-            path: '/UserManage',
-            name: 'UserManage',
-            component: UserManage,
-        },
-        {
-            path: '/BasicInformation',
-            name: 'BasicInformation',
-            component: BasicInformation,
-        }
+        path: '/BasicData',
+        name: 'BasicData',
+        component: BasicData,
+    },
+    {
+        path: '/DailyActivity',
+        name: 'DailyActivity',
+        component: DailyActivity,
+    },
+    {
+        path: '/GradeData',
+        name: 'GradeData',
+        component: GradeData,
+    },
+    {
+        path: '/QuestionSurvey',
+        name: 'QuestionSurvey',
+        component: QuestionSurvey,
+    },
+    {
+        path: '/SignIn',
+        name: 'SignIn',
+        component: SignIn,
+    },
+    {
+        path: '/Evaluation',
+        name: 'Evaluation',
+        component: Evaluation,
+    },
+    {
+        path: '/Growth',
+        name: 'Growth',
+        component: Growth,
+    },
+    {
+        path: '/ImageAnalysis',
+        name: 'ImageAnalysis',
+        component: ImageAnalysis,
+    },
+    {
+        path: '/MentalWarning',
+        name: 'MentalWarning',
+        component: MentalWarning,
+    },
+    {
+        path: '/RecentCare',
+        name: 'RecentCare',
+        component: RecentCare
+    },
+    {
+        path: '/CharacterManage',
+        name: 'CharacterManage',
+        component: CharacterManage,
+    },
+    {
+        path: '/StudentAndParent',
+        name: 'StudentAndParent',
+        component: StudentAndParent,
+    },
+    {
+        path: '/UserManage',
+        name: 'UserManage',
+        component: UserManage,
+    },
+    {
+        path: '/BasicInformation',
+        name: 'BasicInformation',
+        component: BasicInformation,
+    }
     ]
 })

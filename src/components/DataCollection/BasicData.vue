@@ -28,6 +28,7 @@
       </div>
       <div class="selectCotainer">
         <el-select
+          class="selectYear"
           v-model="valueOfYear"
           placeholder="入学年份"
           style="width: 10%"
@@ -40,7 +41,12 @@
           >
           </el-option>
         </el-select>
-        <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
+        <el-select
+          class="selectClass"
+          v-model="valueOfClass"
+          placeholder="班级"
+          style="width: 10%"
+        >
           <el-option
             v-for="item in optionsOfClass"
             :key="item.valueOfClass"
@@ -50,11 +56,13 @@
           </el-option>
         </el-select>
         <el-input
+          class="inputID"
           v-model="inputID"
           placeholder="学号"
           style="width: 10%"
         ></el-input>
         <el-input
+          class="inputName"
           v-model="inputName"
           placeholder="姓名"
           style="width: 10%"
@@ -62,7 +70,7 @@
         <el-button type="primary">搜索</el-button>
       </div>
     </div>
-    
+
     <!-- todo:checkBox在label里 -->
     <div class="dataTable">
       <el-table :data="calTableData" border style="width: 100%">
@@ -142,10 +150,10 @@ export default {
         },
       ],
       valueOfClass: "",
-      
+
       inputID: "",
       inputName: "",
-      
+
       currentPage: 1,
       pagesize: 20,
       tableData: [
@@ -199,6 +207,22 @@ export default {
   flex: 7;
   display: flex;
   justify-content: flex-end;
+}
+/* todo：实现行内元素间距 */
+.selectYear {
+  flex: 1;
+  margin-right: 2%;
+}
+.selectClass {
+  flex: 1;
+
+}
+.inputID {
+  flex: 2;
+
+}
+.inputName{
+  flex: 2;
 }
 .dataTable {
   box-sizing: border-box;

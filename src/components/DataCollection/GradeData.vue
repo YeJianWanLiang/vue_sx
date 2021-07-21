@@ -22,6 +22,8 @@
     <div class="tabBar">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="日常表现成绩" name="first">
+          <!-- 太多了 挤出去了 -->
+          <!-- 设置margin左右即可 -->
           <div class="functionBar">
             <div class="buttonCotainer">
               <el-button type="primary">导入</el-button>

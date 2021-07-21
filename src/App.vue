@@ -6,8 +6,8 @@
   <!-- 导航栏，用单独的一个div包裹，后续可优化//已经改完 -->
   <!-- 拆分出组件来 -->
   <div id="app">
-      <NavMenu />
-    
+    <NavMenu />
+
     <!-- 右侧内容区域 -->
 
     <div class="right-container">
@@ -28,9 +28,9 @@ export default {
 
 <style scoped>
 #app {
-   display: flex;
-   width: 100vw;
-   height: 100vh;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 
 .right-container {

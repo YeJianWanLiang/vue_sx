@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="headerName">
+    <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -22,9 +22,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
