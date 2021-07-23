@@ -19,17 +19,17 @@
       <span style="font-weight: bold; color: #777777">上课签到统计</span>
     </div>
 
-    <div class="functionBar">
-      <div class="buttonCotainer">
+    <div class="SignIn-functionBar">
+      <div class="SignIn-buttonCotainer">
         <el-button type="primary">新增</el-button>
         <el-button plain>推送设置</el-button>
       </div>
 
-      <div class="selectCotainer">
+      <div class="SignIn-selectCotainer">
         <el-select
           v-model="valueOfYear"
           placeholder="入学年份"
-          style="width: 10%"
+          class="SignIn-selectYear"
         >
           <el-option
             v-for="item in optionsOfYear"
@@ -39,7 +39,11 @@
           >
           </el-option>
         </el-select>
-        <el-select v-model="valueOfClass" placeholder="班级" style="width: 10%">
+        <el-select
+          v-model="valueOfClass"
+          placeholder="班级"
+          class="SignIn-selectClass"
+        >
           <el-option
             v-for="item in optionsOfClass"
             :key="item.valueOfClass"
@@ -51,7 +55,7 @@
       </div>
     </div>
 
-    <div class="dataTable">
+    <div class="SignIn-dataTable">
       <el-table :data="calTableData" border>
         <el-table-column prop="class" label="班级" align="center">
         </el-table-column>
@@ -85,7 +89,7 @@
       </el-table>
     </div>
 
-    <div class="tableTag">
+    <div class="SignIn-tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -190,23 +194,31 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-.functionBar {
+.SignIn-functionBar {
   box-sizing: border-box;
   padding: 15px 0 0 0;
   display: flex;
 }
-.buttonCotainer {
+.SignIn-buttonCotainer {
   flex: 3;
 }
-.selectCotainer {
+.SignIn-selectCotainer {
   flex: 7;
+  display: flex;
   justify-content: flex-end;
 }
-.dataTable {
+.SignIn-selectYear {
+  width: 150px;
+  margin-right: 2%;
+}
+.SignIn-selectClass {
+  width: 150px;
+}
+.SignIn-dataTable {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }
-.tableTag {
+.SignIn-tableTag {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }

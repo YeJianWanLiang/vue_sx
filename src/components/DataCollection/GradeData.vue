@@ -19,18 +19,23 @@
       <span style="font-weight: bold; color: #777777">成绩统计数据</span>
     </div>
 
-    <div class="tabBar">
+    <div class="GradeData-tabBar">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="日常表现成绩" name="first">
-          <!-- 太多了 挤出去了 -->
+        <el-tab-pane label="日常表现成绩" name="dailyBehaviorGrade">
+          <!-- todo：太多了 挤出去了 -->
           <!-- 设置margin左右即可 -->
-          <div class="functionBar">
-            <div class="buttonCotainer">
+          <div class="GradeData-functionBar">
+            <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
             </div>
-            <div class="selectCotainer">
-              <el-select v-model="valueOfTerm" placeholder="学期">
+
+            <div class="GradeData-selectCotainer">
+              <el-select
+                class="GradeData-SelectTerm"
+                v-model="valueOfTerm"
+                placeholder="学期"
+              >
                 <el-option
                   v-for="item in optionsOfTerm"
                   :key="item.valueOfTerm"
@@ -39,7 +44,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfYear" placeholder="入学年份">
+              <el-select
+                class="GradeData-SelectYear"
+                v-model="valueOfYear"
+                placeholder="入学年份"
+              >
                 <el-option
                   v-for="item in optionsOfYear"
                   :key="item.valueOfYear"
@@ -48,7 +57,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfClass" placeholder="班级">
+              <el-select
+                class="GradeData-SelectClass"
+                v-model="valueOfClass"
+                placeholder="班级"
+              >
                 <el-option
                   v-for="item in optionsOfClass"
                   :key="item.valueOfClass"
@@ -58,19 +71,21 @@
                 </el-option>
               </el-select>
               <el-input
+                class="GradeData-InputID"
                 v-model="inputID"
                 placeholder="学号"
-                style="width: 15%"
               ></el-input>
               <el-input
+                class="GradeData-InputName"
                 v-model="inputName"
                 placeholder="姓名"
-                style="width: 15%"
               ></el-input>
-              <el-button type="primary">导出</el-button>
+              <el-button class="GradeData-SearchButton" type="primary"
+                >搜索</el-button
+              >
             </div>
           </div>
-          <div class="dataTab">
+          <div class="GradeData-dataTab">
             <el-table :data="calTableDataDaily" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -91,7 +106,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="tableTag">
+          <div class="GradeData-tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
@@ -104,14 +119,18 @@
             </el-pagination>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="期中成绩" name="second"
-          ><div class="functionBar">
-            <div class="buttonCotainer">
+        <el-tab-pane label="期中成绩" name="midGrade">
+          <div class="GradeData-functionBar">
+            <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
             </div>
-            <div class="selectCotainer">
-              <el-select v-model="valueOfTerm" placeholder="学期">
+            <div class="GradeData-selectCotainer">
+              <el-select
+                v-model="valueOfTerm"
+                placeholder="学期"
+                class="GradeData-SelectTerm"
+              >
                 <el-option
                   v-for="item in optionsOfTerm"
                   :key="item.valueOfTerm"
@@ -120,7 +139,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfYear" placeholder="入学年份">
+              <el-select
+                v-model="valueOfYear"
+                placeholder="入学年份"
+                class="GradeData-SelectYear"
+              >
                 <el-option
                   v-for="item in optionsOfYear"
                   :key="item.valueOfYear"
@@ -129,7 +152,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfClass" placeholder="班级">
+              <el-select
+                v-model="valueOfClass"
+                placeholder="班级"
+                class="GradeData-SelectClass"
+              >
                 <el-option
                   v-for="item in optionsOfClass"
                   :key="item.valueOfClass"
@@ -141,17 +168,19 @@
               <el-input
                 v-model="inputID"
                 placeholder="学号"
-                style="width: 15%"
+                class="GradeData-InputID"
               ></el-input>
               <el-input
                 v-model="inputName"
                 placeholder="姓名"
-                style="width: 15%"
+                class="GradeData-InputName"
               ></el-input>
-              <el-button type="primary">导出</el-button>
+              <el-button type="primary" class="GradeData-SearchButton"
+                >搜索</el-button
+              >
             </div>
           </div>
-          <div class="dataTab">
+          <div class="GradeData-dataTab">
             <el-table :data="calTableDataMid" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -167,7 +196,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="tableTag">
+          <div class="GradeData-tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
@@ -179,14 +208,18 @@
             >
             </el-pagination></div
         ></el-tab-pane>
-        <el-tab-pane label="期末成绩" name="third"
-          ><div class="functionBar">
-            <div class="buttonCotainer">
+        <el-tab-pane label="期末成绩" name="finalGrade">
+          <div class="GradeData-functionBar">
+            <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
             </div>
-            <div class="selectCotainer">
-              <el-select v-model="valueOfTerm" placeholder="学期">
+            <div class="GradeData-selectCotainer">
+              <el-select
+                v-model="valueOfTerm"
+                placeholder="学期"
+                class="GradeData-SelectTerm"
+              >
                 <el-option
                   v-for="item in optionsOfTerm"
                   :key="item.valueOfTerm"
@@ -195,7 +228,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfYear" placeholder="入学年份">
+              <el-select
+                v-model="valueOfYear"
+                placeholder="入学年份"
+                class="GradeData-SelectYear"
+              >
                 <el-option
                   v-for="item in optionsOfYear"
                   :key="item.valueOfYear"
@@ -204,7 +241,11 @@
                 >
                 </el-option>
               </el-select>
-              <el-select v-model="valueOfClass" placeholder="班级">
+              <el-select
+                v-model="valueOfClass"
+                placeholder="班级"
+                class="GradeData-SelectClass"
+              >
                 <el-option
                   v-for="item in optionsOfClass"
                   :key="item.valueOfClass"
@@ -216,17 +257,19 @@
               <el-input
                 v-model="inputID"
                 placeholder="学号"
-                style="width: 15%"
+                class="GradeData-InputID"
               ></el-input>
               <el-input
                 v-model="inputName"
                 placeholder="姓名"
-                style="width: 15%"
+                class="GradeData-InputName"
               ></el-input>
-              <el-button type="primary">导出</el-button>
+              <el-button type="primary" class="GradeData-SearchButton"
+                >搜索</el-button
+              >
             </div>
           </div>
-          <div class="dataTab">
+          <div class="GradeData-dataTab">
             <el-table :data="tableDataOfFinal" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -242,7 +285,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="tableTag">
+          <div class="GradeData-tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
@@ -264,6 +307,7 @@
 export default {
   data() {
     return {
+      activeName: "dailyBehaviorGrade",
       optionsOfTerm: [
         {
           valueOfTerm: "选项1",
@@ -407,24 +451,42 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-.tabBar {
+.GradeData-tabBar {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }
-.functionBar {
+.GradeData-functionBar {
   box-sizing: border-box;
-  padding: 15px 0 0 0;
   display: flex;
 }
-.buttonCotainer {
+.GradeData-buttonCotainer {
   flex: 3;
 }
-.selectCotainer {
+.GradeData-selectCotainer {
   flex: 7;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
-.dataTab {
+.GradeData-SelectTerm {
+  width: 170px;
+}
+.GradeData-SelectYear {
+  width: 130px;
+}
+.GradeData-SelectClass {
+  width: 130px;
+}
+.GradeData-InputID {
+  width: 110px;
+}
+.GradeData-InputName {
+  width: 110px;
+}
+/* .SearchButton {
+  margin-left: auto;
+} */
+
+.GradeData-dataTab {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }

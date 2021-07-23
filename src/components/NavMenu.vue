@@ -10,6 +10,7 @@
       active-text-color="#4A7EE4"
       unique-opened="true"
       router="true"
+      default-openeds="1"
     >
       <!-- 数据采集 -->
       <el-submenu index="1">

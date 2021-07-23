@@ -19,60 +19,57 @@
       <span style="font-weight: bold; color: #777777">入学基础数据</span>
     </div>
 
-    <div class="functionBar">
-      <div class="buttonCotainer">
-        <el-button type="primary">导入</el-button>
-        <el-button type="primary">新增</el-button>
-        <el-button type="primary">删除</el-button>
-        <el-button type="danger">导出</el-button>
-      </div>
-      <div class="selectCotainer">
-        <el-select
-          class="selectYear"
-          v-model="valueOfYear"
-          placeholder="入学年份"
-          style="width: 10%"
+    <div class="BasicData-functionBar">
+      <el-button type="primary">导入</el-button>
+      <el-button type="primary">新增</el-button>
+      <el-button type="primary">导出</el-button>
+      <el-button type="danger" class="BasicData-deleteButton">删除</el-button>
+
+      <el-select
+        class="BasicData-selectYear"
+        v-model="valueOfYear"
+        placeholder="入学年份"
+        style="width: 10%"
+      >
+        <el-option
+          v-for="item in optionsOfYear"
+          :key="item.valueOfYear"
+          :label="item.label"
+          :value="item.valueOfYear"
         >
-          <el-option
-            v-for="item in optionsOfYear"
-            :key="item.valueOfYear"
-            :label="item.label"
-            :value="item.valueOfYear"
-          >
-          </el-option>
-        </el-select>
-        <el-select
-          class="selectClass"
-          v-model="valueOfClass"
-          placeholder="班级"
-          style="width: 10%"
+        </el-option>
+      </el-select>
+      <el-select
+        class="BasicData-selectClass"
+        v-model="valueOfClass"
+        placeholder="班级"
+        style="width: 10%"
+      >
+        <el-option
+          v-for="item in optionsOfClass"
+          :key="item.valueOfClass"
+          :label="item.label"
+          :value="item.valueOfClass"
         >
-          <el-option
-            v-for="item in optionsOfClass"
-            :key="item.valueOfClass"
-            :label="item.label"
-            :value="item.valueOfClass"
-          >
-          </el-option>
-        </el-select>
-        <el-input
-          class="inputID"
-          v-model="inputID"
-          placeholder="学号"
-          style="width: 10%"
-        ></el-input>
-        <el-input
-          class="inputName"
-          v-model="inputName"
-          placeholder="姓名"
-          style="width: 10%"
-        ></el-input>
-        <el-button type="primary">搜索</el-button>
-      </div>
+        </el-option>
+      </el-select>
+      <el-input
+        class="BasicData-inputID"
+        v-model="inputID"
+        placeholder="学号"
+        style="width: 10%"
+      ></el-input>
+      <el-input
+        class="BasicData-inputName"
+        v-model="inputName"
+        placeholder="姓名"
+        style="width: 10%"
+      ></el-input>
+      <el-button type="primary">搜索</el-button>
     </div>
 
     <!-- todo:checkBox在label里 -->
-    <div class="dataTable">
+    <div class="BasicData-dataTable">
       <el-table :data="calTableData" border style="width: 100%">
         <el-table-column prop="checkBox" label="checkBox?" align="center"
           ><el-checkbox v-model="checked"></el-checkbox>
@@ -97,7 +94,7 @@
       </el-table>
     </div>
 
-    <div class="tableTag">
+    <div class="BasicData-tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -195,40 +192,42 @@ export default {
   justify-content: flex-end;
 }
 
-.functionBar {
+.BasicData-functionBar {
   box-sizing: border-box;
   padding: 15px 0 0 0;
   display: flex;
+  /* max-width: 100%!important; */
 }
-.buttonCotainer {
-  flex: 3;
-}
-.selectCotainer {
-  flex: 7;
-  display: flex;
-  justify-content: flex-end;
-}
+
 /* todo：实现行内元素间距 */
-.selectYear {
-  flex: 1;
+.BasicData-deleteButton {
   margin-right: 2%;
 }
-.selectClass {
+.BasicData-selectYear {
   flex: 1;
-
+  margin-right: 2%;
+  width: 160px;
 }
-.inputID {
+.BasicData-selectClass {
+  flex: 1;
+  width: 160px;
+  margin-right: 2%;
+}
+.BasicData-inputID {
   flex: 2;
-
+  max-width: 10%;
+  margin-right: 2%;
 }
-.inputName{
+.BasicData-inputName {
   flex: 2;
+  max-width: 10%;
+  margin-right: 2%;
 }
-.dataTable {
+.BasicData-dataTable {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }
-.tableTag {
+.BasicData-tableTag {
   box-sizing: border-box;
   padding: 15px 0 0 0;
 }
