@@ -10,8 +10,8 @@
       active-text-color="#4A7EE4"
       unique-opened="true"
       router="true"
-      default-openeds="1"
     >
+    <!-- 设置default-openeds之后，其他页面无法打开 -->
       <!-- 数据采集 -->
       <el-submenu index="1">
         <template slot="title">
