@@ -11,9 +11,10 @@
 </template>
 
 <script>
-import NavMenu from "./components/NavMenu.vue";
+import NavMenu from "./views/NavMenu.vue";
+// import HeaderBar from "./components/HeaderBar.vue"
 export default {
-  components: { NavMenu },
+  components: {NavMenu},
   data() {
     return {};
   },

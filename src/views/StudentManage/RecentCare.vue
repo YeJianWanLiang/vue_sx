@@ -22,7 +22,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'RecentCare',
+  data () {
+    return {
+
+    };
+  },
+};
 </script>
 
 <style>

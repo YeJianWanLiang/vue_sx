@@ -1,23 +1,23 @@
 import VueRouter from 'vue-router'
 
 // 数据采集
-import BasicData from '../components/DataCollection/BasicData.vue'
-import DailyActivity from '../components/DataCollection/DailyActivity.vue'
-import GradeData from '../components/DataCollection/GradeData.vue'
-import QuestionSurvey from '../components/DataCollection/QuestionSurvey.vue'
-import SignIn from '../components/DataCollection/SignIn.vue'
+import BasicData from '../views/DataCollection/BasicData.vue'
+import DailyActivity from '../views/DataCollection/DailyActivity.vue'
+import GradeData from '../views/DataCollection/GradeData.vue'
+import QuestionSurvey from '../views/DataCollection/QuestionSurvey.vue'
+import SignIn from '../views/DataCollection/SignIn.vue'
 // 学生跟踪管理
-import Evaluation from '../components/StudentManage/Evaluation.vue'
-import Growth from '../components/StudentManage/Growth.vue'
-import ImageAnalysis from '../components/StudentManage/ImageAnalysis.vue'
-import MentalWarning from '../components/StudentManage/MentalWarning.vue'
-import RecentCare from '../components/StudentManage/RecentCare.vue'
+import Evaluation from '../views/StudentManage/Evaluation.vue'
+import Growth from '../views/StudentManage/Growth.vue'
+import ImageAnalysis from '../views/StudentManage/ImageAnalysis.vue'
+import MentalWarning from '../views/StudentManage/MentalWarning.vue'
+import RecentCare from '../views/StudentManage/RecentCare.vue'
 // 学生跟踪管理
-import CharacterManage from '../components/UserManage/CharacterManage.vue'
-import StudentAndParent from '../components/UserManage/StudentAndParent.vue'
-import UserManage from '../components/UserManage/UserManage.vue'
+import CharacterManage from '../views/UserManage/CharacterManage.vue'
+import StudentAndParent from '../views/UserManage/StudentAndParent.vue'
+import UserManage from '../views/UserManage/UserManage.vue'
 // 基础信息配置
-import BasicInformation from '../components/BasicInformation/BasicInformation.vue'
+import BasicInformation from '../views/BasicInformation/BasicInformation.vue'
 
 export default new VueRouter({
     routes: [

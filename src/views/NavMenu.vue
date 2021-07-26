@@ -1,7 +1,7 @@
 <template>
   <div class="nav-menu-wrapper">
     <el-menu
-      default-active="1"
+      :default-active="1"
       class="nav-menu"
       @open="handleOpen"
       @close="handleClose"
@@ -10,7 +10,7 @@
       active-text-color="#4A7EE4"
       unique-opened="true"
       router="true"
-    >
+      >
     <!-- todo:没有设置默认页面 -->
       <!-- 数据采集 -->
       <el-submenu index="1">
@@ -97,10 +97,10 @@
 
 <script>
 export default {
-  name: "navmenu",
+  name: "NavMenu",
   data() {
     return {
-      menuList: [0],
+      
     }
   },
   methods: {

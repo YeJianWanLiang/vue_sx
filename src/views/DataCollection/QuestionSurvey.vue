@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="headerName">
+    <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -16,15 +16,20 @@
     </div>
 
     <div class="headerText">
-      <span style="font-weight: bold; color: #777777">日常活动</span>
+      <span style="font-weight: bold; color: #777777">小问卷调查</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: "QuestionSurvey",
+  data() {
+    return {
 
-}
+    };
+  },
+};
 </script>
 
 <style>

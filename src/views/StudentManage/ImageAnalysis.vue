@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headerName">
+      <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -16,13 +16,21 @@
     </div>
 
     <div class="headerText">
-      <span style="font-weight: bold; color: #777777">学生心理预警生</span>
+      <span style="font-weight: bold; color: #777777">学生画像分析</span>
     </div>
+      
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+name: 'ImageAnalysis',
+  data () {
+    return {
+
+    };
+  },
+}
 </script>
 
 <style>

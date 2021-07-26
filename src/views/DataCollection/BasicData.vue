@@ -111,6 +111,7 @@
 
 <script>
 export default {
+  name: 'BasicData',
   data() {
     return {
       optionsOfYear: [

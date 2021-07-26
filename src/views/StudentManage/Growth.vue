@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headerName">
+      <div class="headerName">
       <i class="el-icon-user-solid"></i>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link"
@@ -16,13 +16,20 @@
     </div>
 
     <div class="headerText">
-      <span style="font-weight: bold; color: #777777">用户管理</span>
+      <span style="font-weight: bold; color: #777777">学生成长</span>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+name: 'Growth',
+  data () {
+    return {
+
+    };
+  },
+}
 </script>
 
 <style>

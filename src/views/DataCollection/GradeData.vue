@@ -305,6 +305,7 @@
 
 <script>
 export default {
+  name: 'GradeData',
   data() {
     return {
       activeName: "dailyBehaviorGrade",
