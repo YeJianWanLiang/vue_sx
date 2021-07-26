@@ -24,6 +24,7 @@ npm i vue-router
 终端：
 
 ``` 
+npm install
 npm run serve
 ```
 
