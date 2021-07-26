@@ -11,7 +11,7 @@
       unique-opened="true"
       router="true"
     >
-    <!-- 设置default-openeds之后，其他页面无法打开 -->
+    <!-- 没有设置默认页面 -->
       <!-- 数据采集 -->
       <el-submenu index="1">
         <template slot="title">

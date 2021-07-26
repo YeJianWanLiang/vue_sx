@@ -68,7 +68,7 @@
       <el-button type="primary">搜索</el-button>
     </div>
 
-    <!-- todo:checkBox在label里 -->
+    <!-- todo:checkBox放进label里 -->
     <div class="BasicData-dataTable">
       <el-table :data="calTableData" border style="width: 100%">
         <el-table-column prop="checkBox" label="checkBox?" align="center"
@@ -196,10 +196,8 @@ export default {
   box-sizing: border-box;
   padding: 15px 0 0 0;
   display: flex;
-  /* max-width: 100%!important; */
 }
 
-/* todo：实现行内元素间距 */
 .BasicData-deleteButton {
   margin-right: 2%;
 }

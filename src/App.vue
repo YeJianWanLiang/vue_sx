@@ -1,15 +1,9 @@
 <template>
-  <!-- 直接用div就行，占满所有宽高，为什么？ -->
-  <!-- flex两块 直接弹性布局 -->
-  <!-- 整体div 100%双，菜单栏 设置百分比，右边 百分比 -->
-
-  <!-- 导航栏，用单独的一个div包裹，后续可优化//已经改完 -->
-  <!-- 拆分出组件来 -->
   <div id="app">
+    <!-- 左侧导航栏 -->
     <NavMenu />
 
-    <!-- 右侧内容区域 -->
-
+    <!-- 右侧内容区域 路由实现跳转 -->
     <div class="right-container">
       <router-view></router-view>
     </div>
@@ -35,7 +29,6 @@ export default {
 
 .right-container {
   padding: 15px;
-  /* background: blue; */
   flex-grow: 1;
   box-sizing: border-box;
 }

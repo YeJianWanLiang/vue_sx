@@ -1,4 +1,4 @@
-# xdsREADME
+打开方式
 
 序言：乱写速成的readme 别骂了
 

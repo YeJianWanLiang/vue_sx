@@ -23,15 +23,72 @@
     * styles
 
       * reset.css——对所有的标签进行初始化
-
-
-    * logo.png——没什么用
-
+	  * logo.png——没什么用
+  
   * components——组件
+  
+    * DataCollection——数据采集
+      * BasicData.vue——入学基础数据
+      * SignIn.vue——上课签到统计
+      * GradeData.vue——成绩统计数据
+      * DailyActivity.vue——日常活动
+      * QuestionSurvey.vue——小问卷调查
+    * StudentManage——学生跟踪管理
+      * ImageAnalysis.vue——学生画像分析
+      * MentalWarning.vue——学生心理异常预警
+      * Growth.vue——学生成长
+      * RecentCare.vue——学生近况与关怀
+      * Evaluation.vue——学生评价
+    * UserManage——用户管理
+      * CharacterManage.vue——角色管理
+      * UserManage.vue——用户管理
+      * StudentAndParent.vue——学生和家长管理
+    * BasicInformation——基础信息配置
+      * BasicInformation.vue——基础信息配置
+    
+    * NavMenu.vue——左边导航栏
+    
+  * router——路由
+  
+    * index.js——路由跳转的配置
+  
+  * App.vue——主页面（拆分为左边和右边）
+  * main.js——入口文件
 
-    * DataCollection
-    * StudentManage
-    * UserManage
-    * BasicInformation
-    * App.vue
-    * main.js
+### 界面内部结构及规范
+
+#### 组件内部结构
+
+``` 
+<template>
+	<div  class="headerName">/<div>				// 最上面右边 hello，张三
+	<div class="headerText"></div>				// 页面标题
+	<div class="BasicData-functionBar"></div>	// 按钮那一横排
+	<div class="BasicData-dataTable"></div>		// 表格区域
+	<div class="BasicData-tableTag"></div>		// 表格页数统计及翻页
+</template>
+```
+
+#### 命名规则
+
+根据后续内容增多 还可以修改 目前做了的部分基本采用这种方式
+
+class命名规则：组件名-类名（动宾结构？小驼峰0.0）
+
+export default：小驼峰 基本参照class命名
+
+e.g.
+
+BasicData-dataTable（入学基础数据里的数据表格）
+
+optionsOfYear（入学年份选择的value和label）
+
+
+
+页面布局：
+
+1. display全部采用flex
+2. button/select/input宽度根据内部文字长度设定，偷懒照搬原型图上面的宽度的px值
+3. 标签的css已经初始化
+4. 左侧导航栏页面已经固定，右侧界面一般不会溢出，如果一行内元素太多，直接设置宽度使其不会占据左边空间
+
