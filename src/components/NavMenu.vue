@@ -11,7 +11,7 @@
       unique-opened="true"
       router="true"
     >
-    <!-- 没有设置默认页面 -->
+    <!-- todo:没有设置默认页面 -->
       <!-- 数据采集 -->
       <el-submenu index="1">
         <template slot="title">
@@ -98,6 +98,11 @@
 <script>
 export default {
   name: "navmenu",
+  data() {
+    return {
+      menuList: [0],
+    }
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
