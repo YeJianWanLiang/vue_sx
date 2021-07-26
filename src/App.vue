@@ -5,6 +5,7 @@
 
     <!-- 右侧内容区域 路由实现跳转 -->
     <div class="right-container">
+      <HeaderBar />
       <router-view></router-view>
     </div>
   </div>
@@ -12,9 +13,9 @@
 
 <script>
 import NavMenu from "./views/NavMenu.vue";
-// import HeaderBar from "./components/HeaderBar.vue"
+import HeaderBar from "./components/HeaderBar.vue"
 export default {
-  components: {NavMenu},
+  components: {NavMenu, HeaderBar},
   data() {
     return {};
   },

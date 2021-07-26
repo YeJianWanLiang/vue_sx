@@ -1,13 +1,13 @@
 <template>
-  <div class="headerName">
+  <div class="headerBar">
     <i class="el-icon-user-solid"></i>
     <el-dropdown trigger="click">
       <span class="el-dropdown-link"
-        >Hello,张三
+        >Hello,{{userName}}
         <i class="el-icon-arrow-down"></i>
       </span>
       <el-dropdown-menu :hide-on-click="false" slot="dropdown">
-        <el-dropdown-item>Hello,张三</el-dropdown-item>
+        <el-dropdown-item>Hello,{{userName}}</el-dropdown-item>
         <el-dropdown-item>账号信息</el-dropdown-item>
         <el-dropdown-item>退出登录</el-dropdown-item>
       </el-dropdown-menu>
@@ -18,10 +18,21 @@
 <script>
 export default {
   name: "HeaderBar",
-  data() {
-      
+  data () {
+    return {
+      userName: '张三',
+      // 接收后端传来的账户信息
+    };
   },
-};
+  // 传来信息
+  // created: function () {
+    
+  // }
+}; 
 </script>
 
-<style></style>
+<style>
+.headerBar {
+  display: flex;
+  justify-content: flex-end;
+}</style>
