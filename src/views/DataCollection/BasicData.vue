@@ -55,10 +55,13 @@
 
     <!-- todo:checkBox放进label里 -->
     <div class="BasicData-dataTable">
-      <el-table :data="calTableData" border style="width: 100%">
-        <el-table-column prop="checkBox" label="checkBox?" align="center"
-          ><el-checkbox v-model="checked"></el-checkbox>
-        </el-table-column>
+      <el-table
+        :data="calTableData"
+        border
+        style="width: 100%"
+        ref="multipleTable"
+      >
+        <el-table-column type="selection" align="center"></el-table-column>
         <el-table-column prop="stdSchoolID" label="学号" align="center">
         </el-table-column>
         <el-table-column prop="stdName" label="姓名" align="center">
@@ -96,7 +99,7 @@
 
 <script>
 export default {
-  name: 'BasicData',
+  name: "BasicData",
   data() {
     return {
       optionsOfYear: [
@@ -159,14 +162,29 @@ export default {
           updateTime: "2021-7-19 17:21",
         },
       ],
+      multipleSelection: [],
     };
   },
   computed: {
-    calTableData: function () {
+    calTableData: function() {
       return this.tableData.slice(
         (this.currentPage - 1) * this.pagesize,
         this.currentPage * this.pagesize
       );
+    },
+  },
+  methods: {
+    toggleSelection(rows) {
+      if (rows) {
+        rows.forEach((row) => {
+          this.$refs.multipleTable.toggleRowSelection(row);
+        });
+      } else {
+        this.$refs.multipleTable.clearSelection();
+      }
+    },
+    handleSelectionChange(val) {
+      this.multipleSelection = val;
     },
   },
 };
