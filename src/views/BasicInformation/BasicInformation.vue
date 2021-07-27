@@ -10,7 +10,8 @@
 export default {
   name: "BasicInformation",
   data() {
-    return {};
+    return {
+    };
   },
 };
 </script>

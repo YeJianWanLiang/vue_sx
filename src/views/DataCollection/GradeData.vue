@@ -7,8 +7,6 @@
     <div class="GradeData-tabBar">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="日常表现成绩" name="dailyBehaviorGrade">
-          <!-- todo：太多了 挤出去了 -->
-          <!-- 设置margin左右即可 -->
           <div class="GradeData-functionBar">
             <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
@@ -443,6 +441,7 @@ export default {
 }
 .GradeData-buttonCotainer {
   flex: 3;
+  display: inline-block;
 }
 .GradeData-selectCotainer {
   flex: 7;

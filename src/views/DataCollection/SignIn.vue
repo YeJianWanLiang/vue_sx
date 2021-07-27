@@ -5,12 +5,9 @@
     </div>
 
     <div class="SignIn-functionBar">
-      <div class="SignIn-buttonCotainer">
         <el-button type="primary">新增</el-button>
         <el-button plain>推送设置</el-button>
-      </div>
-
-      <div class="SignIn-selectCotainer">
+      
         <el-select
           v-model="valueOfYear"
           placeholder="入学年份"
@@ -37,11 +34,11 @@
           >
           </el-option>
         </el-select>
-      </div>
+      
     </div>
 
     <div class="SignIn-dataTable">
-      <el-table :data="calTableData" border>
+      <el-table :data="calTableData" border width="100%">
         <el-table-column prop="class" label="班级" align="center">
         </el-table-column>
         <el-table-column prop="year" label="入学年份" align="center">
@@ -181,20 +178,13 @@ export default {
   padding: 15px 0 0 0;
   display: flex;
 }
-.SignIn-buttonCotainer {
-  flex: 3;
-}
-.SignIn-selectCotainer {
-  flex: 7;
-  display: flex;
-  justify-content: flex-end;
-}
 .SignIn-selectYear {
   width: 150px;
-  margin-right: 2%;
+  margin-left: 60%;
 }
 .SignIn-selectClass {
   width: 150px;
+  margin-left: auto;
 }
 .SignIn-dataTable {
   box-sizing: border-box;

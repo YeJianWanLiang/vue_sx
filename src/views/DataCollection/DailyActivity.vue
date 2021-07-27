@@ -21,8 +21,8 @@
       </div>
     </div>
 
-    <div class="DailyActivity-dataTable">
-      <el-table :data="calTableData" border style="overflow: auto">
+    <div class="DailyActivity-dataTable" style="width: 100%">
+      <el-table :data="calTableData" border>
         <el-table-column prop="actName" label="活动名称" align="center">
         </el-table-column>
         <el-table-column prop="actType" label="类型" align="center">

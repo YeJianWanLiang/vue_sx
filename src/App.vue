@@ -31,6 +31,7 @@ export default {
 
 .right-container {
   padding: 15px;
+  /* flex: 1; */
   width: calc(100% - 215px);
   box-sizing: border-box;
   /* min-width: 990px; */
