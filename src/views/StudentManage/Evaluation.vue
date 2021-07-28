@@ -3,20 +3,210 @@
     <div class="headerText">
       <span style="font-weight: bold; color: #777777">学生评价</span>
     </div>
+    <div class="functionBar">
+      <el-button type="primary"
+        >批量生成学生评价
+        <i class="el-icon-edit"></i>
+      </el-button>
+
+      <el-select
+        class="Evaluation-selectYear"
+        v-model="valueOfYear"
+        placeholder="入学年份"
+        style="width: 10%"
+      >
+        <el-option
+          v-for="item in optionsOfYear"
+          :key="item.valueOfYear"
+          :label="item.label"
+          :value="item.valueOfYear"
+        >
+        </el-option>
+      </el-select>
+      <el-select
+        class="Evaluation-selectClass"
+        v-model="valueOfClass"
+        placeholder="班级"
+        style="width: 10%"
+      >
+        <el-option
+          v-for="item in optionsOfClass"
+          :key="item.valueOfClass"
+          :label="item.label"
+          :value="item.valueOfClass"
+        >
+        </el-option>
+      </el-select>
+
+      <el-input
+        class="Evaluation-inputID"
+        v-model="inputID"
+        placeholder="学号"
+        style="width: 10%"
+      ></el-input>
+
+      <el-input
+        class="Evaluation-inputName"
+        v-model="inputName"
+        placeholder="姓名"
+        style="width: 10%"
+      ></el-input>
+
+      <el-button type="primary">搜索</el-button>
+    </div>
+    <div class="dataTable">
+      <el-table
+        :data="evaluateList"
+        border
+        style="width: 100%"
+        ref="multipleTable"
+      >
+        <el-table-column type="selection" align="center"></el-table-column>        
+        <el-table-column prop="stdName" label="姓名" align="center">
+        </el-table-column>
+        <el-table-column prop="stdSchoolID" label="学号" align="center">
+        </el-table-column>
+        <el-table-column prop="stdYear" label="入学年份" align="center">
+        </el-table-column>
+        <el-table-column prop="stdClass" label="班级" align="center">
+        </el-table-column>
+        <el-table-column prop="stdEvaluation" label="评价" align="center">
+        </el-table-column>
+        <el-table-column prop="updateTime" label="更新时间" align="center">
+        </el-table-column>
+        <el-table-column prop="operation" label="操作" align="center">
+          <el-button type="primary">编辑</el-button>
+        </el-table-column>
+      </el-table>
+    </div>
+    <div class="dataTag">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 30, 50]"
+        :page-size="pagesize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="evaluateList.length"
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-name: 'Evaluation',
-  data () {
+  name: "Evaluation",
+  data() {
     return {
+      optionsOfYear: [
+        {
+          valueOfYear: "选项1",
+          label: "2021",
+        },
+        {
+          valueOfYear: "选项2",
+          label: "2020",
+        },
+        {
+          valueOfYear: "选项3",
+          label: "2019",
+        },
+        {
+          valueOfYear: "选项4",
+          label: "2018",
+        },
+      ],
+      valueOfYear: "",
+      optionsOfClass: [
+        {
+          valueOfClass: "选项1",
+          label: "班级1",
+        },
+        {
+          valueOfClass: "选项2",
+          label: "班级2",
+        },
+        {
+          valueOfClass: "选项3",
+          label: "班级3",
+        },
+      ],
+      valueOfClass: "",
 
+      inputID: "",
+      inputName: "",
+
+      evaluateList: [
+        {
+          stdName: "张三",
+          stdSchoolID: "19251",
+          stdYear: "2019",
+          stdClass: "2019级软件工程",
+          stdEvaluation: "1.创新意识和能力：xxx；2.专业意识和能力：xxxx",
+          updateTime: "2020-01-04 11:00",
+        },
+        {
+          stdName: "张三",
+          stdSchoolID: "19251",
+          stdYear: "2019",
+          stdClass: "2019级软件工程",
+          stdEvaluation: "1.创新意识和能力：xxx；2.专业意识和能力：xxxx",
+          updateTime: "2020-01-04 11:00",
+        },
+      ],
+      multipleSelection: [],
+      currentPage: 1,
+      pagesize: 20,
     };
   },
-}
+  computed: {
+    calEvaluateList: function() {
+      return this.evaluateList.slice(
+        (this.currentPage - 1) * this.pagesize,
+        this.currentPage * this.pagesize
+      );
+    },
+  },
+  methods: {
+    toggleSelection(rows) {
+      if (rows) {
+        rows.forEach((row) => {
+          this.$refs.multipleTable.toggleRowSelection(row);
+        });
+      } else {
+        this.$refs.multipleTable.clearSelection();
+      }
+    },
+    handleSelectionChange(val) {
+      this.multipleSelection = val;
+    },
+    handleSizeChange() {},
+    handleCurrentChange() {},
+  },
+};
 </script>
 
 <style>
-
+.Evaluation-selectYear {
+  flex: 1;
+  width: 160px;
+  margin-left: 30%;
+  margin-right: 2%;
+}
+.Evaluation-selectClass {
+  flex: 1;
+  width: 160px;
+  margin-right: 2%;
+}
+.Evaluation-inputID {
+  flex: 2;
+  max-width: 10%;
+  margin-right: 2%;
+}
+.Evaluation-inputName {
+  flex: 2;
+  max-width: 10%;
+  margin-right: 2%;
+}
 </style>
