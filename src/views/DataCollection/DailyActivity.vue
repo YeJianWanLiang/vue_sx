@@ -4,7 +4,7 @@
       <span style="font-weight: bold; color: #777777">日常活动</span>
     </div>
 
-    <div class="DailyActivity-functionBar">
+    <div class="functionBar">
       <div class="DailyActivity-buttonContainer">
         <el-button type="primary">新增</el-button>
       </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="DailyActivity-dataTable" style="width: 100%">
+    <div class="dataTable" style="width: 100%">
       <el-table :data="calTableData" border>
         <el-table-column prop="actName" label="活动名称" align="center">
         </el-table-column>
@@ -56,7 +56,7 @@
       </el-table>
     </div>
 
-    <div class="DailyActivity-tableTag">
+    <div class="tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -109,11 +109,6 @@ export default {
 </script>
 
 <style>
-.DailyActivity-functionBar {
-  display: flex;
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
 .DailyActivity-buttonContainer {
   flex: 3;
 }
@@ -125,14 +120,6 @@ export default {
 .DailyActivity-inputActivity {
   width: 150px;
   margin-right: 2%;
-}
-.DailyActivity-dataTable {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
-.DailyActivity-tableTag {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
 }
 /* .DailyActivity-buttonContainer {
   min-width: 360px;

@@ -4,7 +4,7 @@
       <span style="font-weight: bold; color: #777777">入学基础数据</span>
     </div>
 
-    <div class="BasicData-functionBar">
+    <div class="functionBar">
       <el-button type="primary">导入</el-button>
       <el-button type="primary">新增</el-button>
       <el-button type="primary">导出</el-button>
@@ -53,8 +53,7 @@
       <el-button type="primary">搜索</el-button>
     </div>
 
-    <!-- todo:checkBox放进label里 -->
-    <div class="BasicData-dataTable">
+    <div class="dataTable">
       <el-table
         :data="calTableData"
         border
@@ -82,7 +81,7 @@
       </el-table>
     </div>
 
-    <div class="BasicData-tableTag">
+    <div class="tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -191,12 +190,6 @@ export default {
 </script>
 
 <style>
-.BasicData-functionBar {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-  display: flex;
-}
-
 .BasicData-deleteButton {
   margin-right: 2%;
 }
@@ -220,12 +213,5 @@ export default {
   max-width: 10%;
   margin-right: 2%;
 }
-.BasicData-dataTable {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
-.BasicData-tableTag {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
+
 </style>

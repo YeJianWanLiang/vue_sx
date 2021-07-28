@@ -3,7 +3,7 @@
     <div class="headerText">
       <span style="font-weight: bold; color: #777777">小问卷调查</span>
     </div>
-    <div class="QuestionSurvey-functionBar">
+    <div class="functionBar">
       <el-button type="primary">新增</el-button>
       <el-input
         v-model="inputTitle"
@@ -29,7 +29,7 @@
       </el-select>
       <el-button type="primary">搜索</el-button>
     </div>
-    <div class="QuestionSurvey-dataTable">
+    <div class="dataTable">
       <el-table :data="calTableData" border style="width: 100%">
         <el-table-column prop="questionTitle" label="问卷标题" align="center">
         </el-table-column>
@@ -69,7 +69,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <div class="QuestionSurvey-tableTag">
+    <div class="tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -180,22 +180,8 @@ export default {
 </script>
 
 <style>
-.QuestionSurvey-functionBar {
-  display: flex;
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
-
 .QuestionSurvey-inputType {
   width: 150px;
-}
-.QuestionSurvey-dataTable {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
-}
-.QuestionSurvey-tableTag {
-  box-sizing: border-box;
-  padding: 15px 0 0 0;
 }
 .QuestionSurvey-selectMore {
   width: 120px;

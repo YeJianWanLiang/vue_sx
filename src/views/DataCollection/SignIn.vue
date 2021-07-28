@@ -4,7 +4,7 @@
       <span style="font-weight: bold; color: #777777">上课签到统计</span>
     </div>
 
-    <div class="SignIn-functionBar">
+    <div class="functionBar">
         <el-button type="primary">新增</el-button>
         <el-button plain>推送设置</el-button>
       
@@ -37,7 +37,7 @@
       
     </div>
 
-    <div class="SignIn-dataTable">
+    <div class="dataTable">
       <el-table :data="calTableData" border width="100%">
         <el-table-column prop="class" label="班级" align="center">
         </el-table-column>
@@ -71,7 +71,7 @@
       </el-table>
     </div>
 
-    <div class="SignIn-tableTag">
+    <div class="tableTag">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"

@@ -4,10 +4,10 @@
       <span style="font-weight: bold; color: #777777">成绩统计数据</span>
     </div>
 
-    <div class="GradeData-tabBar">
+    <div class="tabBar">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="日常表现成绩" name="dailyBehaviorGrade">
-          <div class="GradeData-functionBar">
+          <div class="functionBarInTab">
             <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
@@ -68,7 +68,7 @@
               >
             </div>
           </div>
-          <div class="GradeData-dataTab">
+          <div class="dataTab">
             <el-table :data="calTableDataDaily" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -89,7 +89,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="GradeData-tableTag">
+          <div class="tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
@@ -103,7 +103,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="期中成绩" name="midGrade">
-          <div class="GradeData-functionBar">
+          <div class="functionBarInTab">
             <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
@@ -163,7 +163,7 @@
               >
             </div>
           </div>
-          <div class="GradeData-dataTab">
+          <div class="dataTab">
             <el-table :data="calTableDataMid" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -179,7 +179,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="GradeData-tableTag">
+          <div class="tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
@@ -192,7 +192,7 @@
             </el-pagination></div
         ></el-tab-pane>
         <el-tab-pane label="期末成绩" name="finalGrade">
-          <div class="GradeData-functionBar">
+          <div class="functionBarInTab">
             <div class="GradeData-buttonCotainer">
               <el-button type="primary">导入</el-button>
               <el-button type="primary">导出</el-button>
@@ -252,7 +252,7 @@
               >
             </div>
           </div>
-          <div class="GradeData-dataTab">
+          <div class="dataTab">
             <el-table :data="tableDataOfFinal" border style="width: 100%">
               <el-table-column prop="stdID" label="学号"> </el-table-column>
               <el-table-column prop="name" label="姓名"></el-table-column>
@@ -268,7 +268,7 @@
               </el-table-column>
             </el-table>
           </div>
-          <div class="GradeData-tableTag">
+          <div class="tableTag">
             <el-pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
